@@ -1,8 +1,17 @@
 import Router from '@koa/router';
-import { DefaultState, Context } from 'koa';
 
-const router = new Router<DefaultState, Context>();
+import { authController } from '~/controllers';
+import { authValidator } from '~/validators';
 
-router.get('/');
+import { isAuthenticated } from './middlewares';
+
+const router = new Router();
+
+router
+  /**
+   * Auth
+   */
+  .get('/authenticate', authValidator.create, authController.create)
+  .use(isAuthenticated);
 
 export default router;

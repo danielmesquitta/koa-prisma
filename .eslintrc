@@ -15,6 +15,7 @@
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "import/no-cycle": "off",
+    "no-param-reassign": "off",
     "import-helpers/order-imports": [
       "warn",
       {
