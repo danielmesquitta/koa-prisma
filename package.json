@@ -1,17 +1,23 @@
 {
-  "name": "pedi-aqui",
+  "name": "koa-prisma",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Daniel Mesquita <danielmesquitta123@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "tsnd -r tsconfig-paths/register -r dotenv/config --respawn --transpile-only --ignore-watch node_modules ./src/shared/http/server.ts"
+    "dev": "tsnd -r tsconfig-paths/register -r dotenv/config --respawn --transpile-only --ignore-watch node_modules ./src/server.ts",
+    "build": "tsc",
+    "prisma:migrate": "prisma migrate dev --name init; prisma generate"
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.0.0",
+    "@prisma/client": "^2.25.0",
     "dotenv": "^10.0.0",
+    "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
+    "koa-combine-routers": "^4.0.2",
     "koa-csp": "^1.1.1",
     "koa-helmet": "^6.1.0",
     "koa-logger": "^3.2.1",
@@ -19,13 +25,26 @@
     "koa-static": "^5.0.0"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.2",
     "@types/koa": "^2.13.3",
     "@types/koa-bodyparser": "^4.3.1",
     "@types/koa-logger": "^3.1.1",
     "@types/koa-mount": "^4.0.0",
     "@types/koa-static": "^4.0.1",
     "@types/koa__cors": "^3.0.2",
+    "@types/koa__router": "^8.0.4",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.1",
+    "prisma": "2.25.0",
     "ts-node-dev": "^1.1.6",
+    "tsconfig-paths": "^3.9.0",
     "typescript": "^4.3.4"
   }
 }
