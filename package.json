@@ -18,7 +18,6 @@
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
-    "koa-combine-routers": "^4.0.2",
     "koa-csp": "^1.1.1",
     "koa-helmet": "^6.1.0",
     "koa-logger": "^3.2.1",
